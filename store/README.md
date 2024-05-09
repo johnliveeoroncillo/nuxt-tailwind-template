@@ -1,0 +1,1 @@
+Fix Auto Trade System Frontend

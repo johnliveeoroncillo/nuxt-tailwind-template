@@ -1,0 +1,28 @@
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 100ms;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
+.slide-leave-active,
+.slide-enter-active {
+    transition: 200ms;
+}
+.slide-enter [data-modal] {
+    transform: translate(100%, 0);
+}
+.slide-leave-to [data-modal] {
+    transform: translate(100%, 0);
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

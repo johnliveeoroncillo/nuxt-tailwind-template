@@ -1,0 +1,31 @@
+<template>
+    <div class="flex items-center justify-center h-screen bg-gray-50">
+          <div>
+            <h1 class="mb-6 text-4xl">Flowbite + Nuxt.js + Tailwind CSS Starter</h1>
+            <div class="w-auto mb-4 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg !bg-gray-700 !border-gray-600 !text-white">
+                <a href="/flowbite/events" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Data attribute events</A>
+                <a href="/flowbite/accordion" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Accordion</A>
+                <a href="/flowbite/carousel" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Carousel</A>
+                <A href="/flowbite/modal" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Modal</A>
+                <A href="/flowbite/collapse" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Collapse</A>
+                <A href="/flowbite/dial" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Speed Dial</A>
+                <A href="/flowbite/dismiss" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Dismiss</A>
+                <A href="/flowbite/drawer" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Drawer</A>
+                <A href="/flowbite/dropdown" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Dropdown</A>
+                <A href="/flowbite/popover" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Popover</A>
+                <A href="/flowbite/tabs" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Tabs</A>
+                <A href="/flowbite/tooltip" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Tooltip</A>
+                <A href="/flowbite/input-counter" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 !border-gray-600 hover:!bg-gray-600 hover:!text-white focus:!ring-gray-500 focus:!text-white">Input Counter</A>
+            </div>
+            <p class="mb-8">Learn more about <a href="https://flowbite.com/docs/getting-started/nuxt-js/" class="text-blue-600 hover:underline">Flowbite + Nuxt.js here</a>.</p>
+          </div>
+      </div>
+</template>
+  
+
+<script>
+export default {
+    auth: false,
+    layout: 'blank',
+}
+</script>

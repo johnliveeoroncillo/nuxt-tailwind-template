@@ -1,0 +1,20 @@
+#notification-dropdown {
+    top: -2px !important;
+}
+
+
+
+table {
+    td, th {
+        &.td-fit {
+            @apply whitespace-nowrap;
+            width: 1%;
+        }
+    }
+
+    &.table-striped {
+        tr:nth-of-type(even) {
+            background-color: #eeeeee;
+        }
+    }
+}
