@@ -1,5 +1,10 @@
 <template>
-    <nuxt class="flex-1" />
+    <div>
+        <nuxt class="flex-1" />
+
+        <!-- IMPORT MODAL -->
+        <modal-confirm />
+    </div>
 </template>
 
 <script>
