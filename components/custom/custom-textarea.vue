@@ -3,7 +3,7 @@
         <label v-if="label" :for="label" class="block text-blueGray-700 font-bold mb-2">{{label}}</label>
         <label v-else-if="label_small" :for="label_small" class="block text-blueGray-700 font-semibold uppercase !mb-1 text-xs">{{label_small}}</label>
         <textarea :id="label" :ref="refs" v-model="localValue" :type="type ? type : 'text'" class="border border-gray-300 px-4 py-2 rounded-lg focus:border-blue-600 font-semibold text-blueGray-800 block w-full placeholder:text-gray-300" :class="{'!border !border-red-500' : errorInput, [classes]: true, 'resize-none': noresize}" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" :data-barcode="data_barcode" v-on="listeners" :rows="rows"></textarea>
-        <error :error="errorInput" />
+        <custom-error :error="errorInput" />
     </div>
 </template>
 

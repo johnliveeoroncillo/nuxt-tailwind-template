@@ -4,12 +4,20 @@
             <h1>Test</h1>
             Will update this after 2 seconds data from store: {{ testData }}
             <custom-button-loader @click="openModal">Open Modal</custom-button-loader>
+
+            <custom-input :label="`Firstname - ${data.firstname}`" v-model="data.firstname" placeholder="Test" />
+            <custom-input label="Error" v-model="data.test" :error="'Test'" />
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            data: {},
+        }
+    },
     mounted() {
         this.$store.dispatch('LOAD_TEST');
     },

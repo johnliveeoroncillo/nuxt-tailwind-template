@@ -6,7 +6,7 @@
             <option :value="undefined" v-if="placeholder" disabled selected="selected">{{ placeholder }}</option>
             <slot />
         </select>
-        <error :error="errorInput" />
+        <custom-error :error="errorInput" />
     </div>
 </template>
 
