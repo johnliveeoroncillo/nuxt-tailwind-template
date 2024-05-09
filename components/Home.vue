@@ -25,7 +25,28 @@ export default {
     },
     methods: {
         openModal() {
-            this.$modal.show('confirm', { message: 'Hi', yesText: 'Hello', noText: 'No', data: this.testData, options: this.testData, callback: this.captureCallback });
+            this.$modal.show('modal', {
+                layout: 'default',
+                component: 'confirm',
+                message: 'Hi0',
+                yesText: 'Hello',
+                noText: 'No',
+                data: this.testData,
+                options: this.testData,
+                callback:this.captureCallback,
+            });
+
+            setTimeout(() => {
+                this.$modal.show('modal', {
+                    component: 'test',
+                    message: 'Hi1',
+                    noText: 'Hello',
+                    data: this.testData,
+                    options: this.testData,
+                    callback:this.captureCallback,
+                });
+                console.log('modal2');
+            }, 2000)
         },
         captureCallback(options) {
             console.log('CAPTURED', options);
