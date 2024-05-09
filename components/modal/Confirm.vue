@@ -33,9 +33,11 @@ export default {
     },
     mounted() {
         this.$modal.on(`show_${this.modal}`, this.showModal);
+        this.$modal.on(`hide_${this.modal}`, this.close);
     },
     beforeDestroy() {
-        this.$modal.off(`show_${this.modal}`, this.showModal)
+        this.$modal.off(`show_${this.modal}`, this.showModal);
+        this.$modal.off(`hide_${this.modal}`, this.close);
     },
     methods: {
         async callback() {
