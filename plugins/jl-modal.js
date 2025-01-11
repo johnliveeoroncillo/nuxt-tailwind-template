@@ -12,7 +12,11 @@ export default (context, inject) => {
             // const modalName = `${modal}${count > 1 ? `-${count}` : ''}`;
             const modalName = options.component;
 
-            if (!modals[modalName]) {
+            const element = document.createElement('div');
+            element.setAttribute('id', modalName);
+            document.querySelector('#__layout').appendChild(element);
+            
+            // if (!modals[modalName]) {
                 ModalComponent.modal = modalName;
                 ModalComponent.$modal = this;
             
@@ -42,10 +46,14 @@ export default (context, inject) => {
                         close() {
                             this.show = false;
                             this.data = {};
+
+                            // remove the element from the DOM
+                            this.$el.parentNode.removeChild(this.$el);
+                            element.remove();
+                            delete modals[modalName];
                         },
                     },
                     created() {
-                        console.log(modalName)
                         this.$modal.on(`show_${modalName}`, this.showModal);
                         this.$modal.on(`hide_${modalName}`, this.close);
                     },
@@ -57,11 +65,9 @@ export default (context, inject) => {
                 });
 
                 modals[modalName] = newModal;
-            }
+            // }
             
-            const element = document.createElement('div');
-            element.setAttribute('id', modalName);
-            document.querySelector('#__layout').appendChild(element);
+            
             modals[modalName].$mount(`#${modalName}`)
             
             bus.$emit(`show_${modalName}`, options);
