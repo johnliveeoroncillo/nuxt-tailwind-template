@@ -2,6 +2,15 @@
     import { Button } from '@/components/ui/button'
     import { Input } from '@/components/ui/input'
     import { Label } from '@/components/ui/label'
+
+    const { data } = await useFetch('/api/hello')
+
+    let foo = useData()
+    const test = ref('');
+
+    setTimeout(() => {
+        test.value = '';
+    }, 1000);
 </script>
 
 <template>
@@ -10,10 +19,11 @@
       <div class="mx-auto grid w-[350px] gap-6">
         <div class="grid gap-2 text-center">
           <h1 class="text-3xl font-bold">
-            Login
+            Login {{ foo }} TEST:{{ test }}
           </h1>
           <p class="text-balance text-muted-foreground">
             Enter your email below to login to your account
+            {{ data }}
           </p>
         </div>
         <div class="grid gap-4">
