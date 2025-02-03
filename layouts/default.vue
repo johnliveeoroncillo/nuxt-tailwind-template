@@ -1,12 +1,3 @@
 <template>
-    <div>
-        <nuxt class="flex-1" />
-    </div>
+    <slot />
 </template>
-
-<script>
-import '@/plugins/flowbite';
-export default {
-    
-}
-</script>
