@@ -1,5 +1,8 @@
 import { readFileSync } from "fs";
 
+/**
+ * List down all protected endpoints
+ */
 const protectedRoutes = [
     'update-profile/[id]'
 ]
