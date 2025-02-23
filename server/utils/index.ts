@@ -1,19 +1,10 @@
 import { readFileSync } from "fs";
-import { join } from "path";
 
-const loadProtected = async () => {
-    try {
-        const filePath = join(process.cwd(), 'server', 'middleware', 'protected.json');
-        const protect = readFileSync(filePath, 'utf-8');
-        const jsonData = JSON.parse(protect);
-        return jsonData;
-    } catch (error) {
-        console.error('Error reading protected.json:', error);
-    }
-}
+const protectedRoutes = [
+    'update-profile/[id]'
+]
 
 export const checkProtectedPage = async (event: any) => {
-    const protectedRoutes = await loadProtected();
     const parsedPath = event.path.replace(/\/api\//g, '');
 
     for (const route of protectedRoutes) {
