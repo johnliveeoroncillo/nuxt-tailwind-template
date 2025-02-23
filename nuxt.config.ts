@@ -33,10 +33,15 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@vite-pwa/nuxt', '@samk-dev/nuxt-vcalendar'],
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@vite-pwa/nuxt', '@samk-dev/nuxt-vcalendar', '@nuxtjs/color-mode', '@prisma/nuxt'],
   shadcn: {
       prefix: '',
       componentDir: './components/ui'
+  },
+  colorMode: {
+      preference: "dark", // Use 'light' or 'dark' as default
+      fallback: "light", // Default mode if no preference is found
+      classSuffix: "", // Important for Tailwind's 'dark:' classes
   },
   // vite: {
   //   server: {

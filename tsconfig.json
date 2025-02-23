@@ -3,9 +3,12 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "module": "ESNext", // or 'ES2020', 'CommonJS'
-    "target": "ESNext", // or 'ES2020'
-    "moduleResolution": "node",
+    // "target": "ESNext", // or 'ES2020'
+    // "moduleResolution": "node",
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "target": "es2022",
+    "moduleResolution": "bundler",
+    "customConditions": ["node"], // or "node"
   }
 }
