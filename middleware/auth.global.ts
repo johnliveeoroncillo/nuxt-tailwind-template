@@ -3,6 +3,10 @@ import { useAuth } from '@/composables/useAuth';
 export default defineNuxtRouteMiddleware((to, from) => {
     const { user } = useAuth();
 
+    if (!to.matched.length) {
+        return;
+    }
+
     // Handle guest users
     if (to.meta.auth === 'guest') {
       // If a guest tries to access a guest page and is authenticated, redirect them to the dashboard
