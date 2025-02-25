@@ -29,11 +29,19 @@ export default defineNuxtConfig({
         APP_NAME: process.env.APP_NAME,
         SECRET_KEY: process.env.SECRET_KEY,
         SSR: (process.env?.SSR ?? 'true') == 'true',
+        SOCKET_URL: process.env?.SOCKET_URL ?? '',
     },
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@vite-pwa/nuxt', '@samk-dev/nuxt-vcalendar', '@nuxtjs/color-mode', '@prisma/nuxt'],
+  modules: [
+      '@nuxtjs/tailwindcss',
+      'shadcn-nuxt',
+      '@vite-pwa/nuxt',
+      '@samk-dev/nuxt-vcalendar',
+      '@nuxtjs/color-mode',
+      '@prisma/nuxt',
+  ],
   shadcn: {
       prefix: '',
       componentDir: './components/ui'
@@ -43,6 +51,11 @@ export default defineNuxtConfig({
       fallback: "light", // Default mode if no preference is found
       classSuffix: "", // Important for Tailwind's 'dark:' classes
   },
+  nitro: {
+      experimental: {
+          websocket: true
+      }
+  }
   // vite: {
   //   server: {
   //     proxy: {

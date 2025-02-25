@@ -97,6 +97,7 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+import { socket } from './socket';
 const colorMode = useColorMode()
 
 const payload = reactive({
@@ -106,4 +107,9 @@ const payload = reactive({
 const login = async () => {
     await useApi().POST('/login', payload);
 }
+
+watch(colorMode, (newVal: any) => {
+    console.log('test')
+    socket.emit('message', newVal)
+}, { deep: true });
 </script>
