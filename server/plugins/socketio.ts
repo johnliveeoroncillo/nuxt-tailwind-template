@@ -15,6 +15,14 @@ export default defineNitroPlugin((nitroApp: AppConfig) => {
         socket.on('message', (message) => {
             console.log('Message received: ', message);
         })
+
+        socket.on('disconnect', () => {
+            console.log('Client disconnect: ', socket.id);
+        })
+
+        socket.on('disconnected', () => {
+          console.log('Client disconnected: ', socket.id);
+      })
   });
 
   nitroApp.router.use("/socket.io/", defineEventHandler({
