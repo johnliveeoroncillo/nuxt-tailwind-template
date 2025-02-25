@@ -40,7 +40,7 @@ export default defineNuxtConfig({
       '@vite-pwa/nuxt',
       '@samk-dev/nuxt-vcalendar',
       '@nuxtjs/color-mode',
-      '@prisma/nuxt',
+      // '@prisma/nuxt',
   ],
   shadcn: {
       prefix: '',
@@ -55,7 +55,7 @@ export default defineNuxtConfig({
       experimental: {
           websocket: true
       }
-  }
+  },
   // vite: {
   //   server: {
   //     proxy: {
