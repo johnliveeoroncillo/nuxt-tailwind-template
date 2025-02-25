@@ -13,8 +13,6 @@ export default defineNuxtRouteMiddleware((to, from) => {
       return;
     }
 
-    console.log(to)
-  
     // Handle authenticated users (if `auth` is not false)
     if (to.meta.auth !== false) {
         // If the page requires authentication and the user is not authenticated, redirect to the login page
