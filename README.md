@@ -7,19 +7,19 @@ This project is a **Nuxt 3** application that includes several key features such
 
 ```bash
 .
-├── assets/             # Static assets (CSS, images, etc.)
+├── assets/            # Static assets (CSS, images, etc.)
 │   ├── css/           # Stylesheets
 │   ├── img/           # Image assets
 │
 ├── components/        # Vue components
-│   ├── ui/           # UI-specific components
-│   ├── templates/    # Template components
+│   ├── ui/            # UI-specific components
+│   ├── templates/     # Template components
 │
-├── composables/       # Reusable functions and utilities
+├── composables/                    # Reusable functions and utilities
 │   ├── composables.enums.ts        # Enum definitions
 │   ├── composables.interface.ts    # Interface definitions
-│   ├── useApis.ts                   # API-related composable functions
-│   ├── useAuth.ts                    # Authentication composables
+│   ├── useApis.ts                  # API-related composable functions
+│   ├── useAuth.ts                  # Authentication composables
 │
 ├── interfaces/        # TypeScript interfaces
 │
@@ -52,17 +52,17 @@ This project is a **Nuxt 3** application that includes several key features such
 │
 ├── server/            # Server-side API routes and middleware
 │   ├── api/           # API endpoints
-│   │   ├── update-profile.ts  # Update user profile
-│   │   ├── login.post.ts      # Login API
-│   │   ├── logout.delete.ts   # Logout API
-│   │   ├── register.post.ts   # User registration API
-│   ├── middleware/            # Server middleware
+│   │   ├── update-profile.ts    # Update user profile
+│   │   ├── login.post.ts        # Login API
+│   │   ├── logout.delete.ts     # Logout API
+│   │   ├── register.post.ts     # User registration API
+│   ├── middleware/              # Server middleware
 │   │   ├── authorizer.global.ts # Authorization middleware
-│   │   ├── request.global.ts   # Request handling middleware
-│   ├── plugins/               # Server-side plugins
-│   │   ├── hooks.ts.bak       # Hook plugin (backup)
-│   │   ├── socket.io.ts       # WebSocket integration
-│   ├── utils/                 # Server utilities
+│   │   ├── request.global.ts    # Request handling middleware
+│   ├── plugins/                 # Server-side plugins
+│   │   ├── hooks.ts.bak         # Hook plugin (backup)
+│   │   ├── socket.io.ts         # WebSocket integration
+│   ├── utils/                   # Server utilities
 │
 ├── stores/            # Pinia state management stores
 │   ├── auth.ts        # Authentication store
