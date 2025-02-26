@@ -22,7 +22,7 @@ const Validate = (request: Request): Request => {
 export default defineEventHandler(async (event) => {
     // SAMPLE SENDING TO SOCKET ID
     const socketId = getHeader(event, 'x-socket-id');
-    useNitroApp().hooks.callHook('custom:send-message', socketId, 'login post');
+    useNitroApp().hooks.callHook('custom:send-message', socketId ?? '', 'login post');
 
     const body = await readBody(event)
     const data = Validate(body);
