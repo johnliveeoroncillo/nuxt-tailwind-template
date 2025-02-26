@@ -1,7 +1,9 @@
 import type { AppConfig } from "nitropack";
 import { Server as Engine } from "engine.io";
-import { Server } from "socket.io";
+import { Server, Socket } from "socket.io";
 import { defineEventHandler } from "h3";
+
+const connectedSockets = new Map<string, Socket>(); // Store connected clients
 
 export default defineNitroPlugin((nitroApp: AppConfig) => {
   const engine = new Engine();
@@ -10,18 +12,16 @@ export default defineNitroPlugin((nitroApp: AppConfig) => {
   io.bind(engine);
 
   io.on("connection", (socket) => {
-        console.log('Client connected:' , socket.id);
+      console.log('Client connected:' , socket.id);
+      connectedSockets.set(socket.id, socket); // Store the socket
 
-        socket.on('message', (message) => {
-            console.log('Message received: ', message);
-        })
+      socket.on('message', (message) => {
+          console.log('Message received: ', message);
+      })
 
-        socket.on('disconnect', () => {
-            console.log('Client disconnect: ', socket.id);
-        })
-
-        socket.on('disconnected', () => {
-          console.log('Client disconnected: ', socket.id);
+      socket.on('disconnect', () => {
+          console.log('Client disconnect: ', socket.id);
+          connectedSockets.delete(socket.id); // Remove from map on disconnect
       })
   });
 
@@ -39,4 +39,14 @@ export default defineNitroPlugin((nitroApp: AppConfig) => {
       }
     }
   }));
+
+  // nitroApp.hooks.hook("custom:send-message", (socketId: string, message: string) => {
+  //     const socket = connectedSockets.get(socketId);
+  //     if (socket) {
+  //         socket.emit("message", message);
+  //     }
+  // });
+
+  // // Attach io to Nitro app for external access
+  // nitroApp.io = io;
 });

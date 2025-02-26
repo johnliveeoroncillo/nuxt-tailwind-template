@@ -32,6 +32,10 @@ export default defineEventHandler(async (event) => {
         ResponseHandler.NotFound('User not found');
     }
 
+    if (user?.Password !== data.password) {
+        ResponseHandler.BadRequest('Invalid username or password');
+    }
+
     setCookie(event, 'token', 'test', {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',

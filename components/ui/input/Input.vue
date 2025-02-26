@@ -7,9 +7,6 @@ const props = defineProps<{
   defaultValue?: string | number
   modelValue?: string | number
   class?: HTMLAttributes['class']
-  type?: string
-  mask?: string;
-  disabled?: boolean;
 }>()
 
 const emits = defineEmits<{
@@ -23,8 +20,5 @@ const modelValue = useVModel(props, 'modelValue', emits, {
 </script>
 
 <template>
-    <div class="flex items-center gap-2">
-        <span class="font-semibold bg-primary text-muted rounded-md px-2 py-1" v-if="props.mask">{{ props.mask.replace(/#/g, '') }}</span>
-        <input v-model="modelValue" :class="cn('flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50', props.class)" :type="props.type ?? 'text'" :disabled="props.disabled">
-    </div>
+  <input v-model="modelValue" :class="cn('flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-slate-300', props.class)">
 </template>

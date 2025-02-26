@@ -43,8 +43,8 @@ html, body, #__nuxt {
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent: 210 40% 98%;
+    --sidebar-accent-foreground: 221.2 83.2% 53.3%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
@@ -66,7 +66,7 @@ html, body, #__nuxt {
     --input: 217.2 32.6% 17.5%;
 
     --primary: 210 40% 98%;
-    --primary-foreground: 221.2 83.2% 53.3%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -83,8 +83,8 @@ html, body, #__nuxt {
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
@@ -98,7 +98,6 @@ html, body, #__nuxt {
     @apply bg-background text-foreground;
   }
 }
-
 
 .router-link-exact-active  {
     @apply text-primary;

@@ -42,7 +42,6 @@
                 <templates-input v-model="payload.email" label="Email" />
                 <div class="grid gap-2">
                   <div class="flex items-center">
-                    <Label html-for="password">Password</Label>
                     <a
                       href="#"
                       class="ml-auto text-sm underline-offset-4 hover:underline"
@@ -50,7 +49,7 @@
                       Forgot your password?
                     </a>
                   </div>
-                  <Input id="password" type="password" v-model="payload.password" required />
+                  <templates-input v-model="payload.password" label="Password" type="password" />
                 </div>
                 <templates-button-loader type="submit" class="w-full" @click="login">
                   Login
@@ -64,27 +63,6 @@
               </div>
             </div>
           </form>
-
-          <DropdownMenu>
-          <DropdownMenuTrigger as-child>
-            <Button variant="outline">
-                <Icon icon="radix-icons:sun" class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Icon icon="radix-icons:moon" class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                <span class="sr-only">Toggle theme</span>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem @click="colorMode.preference = 'light'">
-              Light
-            </DropdownMenuItem>
-            <DropdownMenuItem @click="colorMode.preference = 'dark'">
-              Dark
-            </DropdownMenuItem>
-            <DropdownMenuItem @click="colorMode.preference = 'system'">
-              System
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
         </CardContent>
       </Card>
       <div class="text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-primary  ">
@@ -97,8 +75,7 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
-import { socket } from './socket';
-const colorMode = useColorMode()
+// import { socket } from './socket';
 
 const api = useApi();
 
@@ -114,8 +91,8 @@ const login = async () => {
     }
 }
 
-watch(colorMode, (newVal: any) => {
-    console.log('test')
-    socket.emit('message', newVal)
-}, { deep: true });
+// watch(colorMode, (newVal: any) => {
+//     console.log('test')
+//     socket.emit('message', newVal)
+// }, { deep: true });
 </script>
