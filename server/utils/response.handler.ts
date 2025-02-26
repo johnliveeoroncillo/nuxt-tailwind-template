@@ -1,5 +1,13 @@
 
-export class HttpErrors {
+export class ResponseHandler {
+    static Ok(data?: any, message?: string) {
+        return {
+            status: 200,
+            message: message ?? 'Ok',
+            data,
+        };
+    }
+
     static Forbidden(message?: string) {
         throw createError({
             status: 403,

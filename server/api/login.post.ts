@@ -1,5 +1,6 @@
 import joi from "joi";
 import { Validation } from "../utils/validator";
+import { ResponseHandler } from "../utils/response.handler";
 
 interface Request {
     email: string;
@@ -28,7 +29,7 @@ export default defineEventHandler(async (event) => {
         },
     })
     if (!user) {
-        HttpErrors.NotFound('User not found');
+        ResponseHandler.NotFound('User not found');
     }
 
     setCookie(event, 'token', 'test', {

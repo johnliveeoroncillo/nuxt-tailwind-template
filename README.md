@@ -29,18 +29,14 @@ This project is a **Nuxt 3** application that includes several key features such
 ├── lib/               # Library and utility functions
 │   ├── prisma.ts      # Prisma client setup
 │   ├── utils.ts       # General utilities
-│
-├── middleware/        # Nuxt middleware
+├── middleware/        # Nuxt middleware (Executed alphabetically)
 │   ├── auth.global.ts # Global authentication middleware
-│
 ├── pages/             # Nuxt pages
 │   ├── dashboard.vue  # Dashboard page
 │   ├── index.vue      # Home page
-│
 ├── plugins/           # Nuxt plugins
 │   ├── global.ts      # Global plugin setup
 │   ├── pinia.ts       # Pinia store plugin
-│
 ├── prisma/            # Database schema and migrations
 │   ├── migrations/    # Prisma migration files
 │   ├── schema.prisma  # Prisma schema definition
@@ -49,7 +45,6 @@ This project is a **Nuxt 3** application that includes several key features such
 │   ├── icons/         # Icon assets
 │   ├── favicon.ico    # Favicon
 │   ├── robots.txt     # Robots.txt file
-│
 ├── server/            # Server-side API routes and middleware
 │   ├── api/           # API endpoints
 │   │   ├── update-profile.ts    # Update user profile
@@ -63,11 +58,15 @@ This project is a **Nuxt 3** application that includes several key features such
 │   │   ├── hooks.ts.bak         # Hook plugin (backup)
 │   │   ├── socket.io.ts         # WebSocket integration
 │   ├── utils/                   # Server utilities
-│
+│   │   ├── prisma.ts            # Prisma configuration
+│   │   ├── protected-routes.ts  # Protected routes config
+│   │   ├── response.handler.ts  # Response handler class
+│   │   ├── validator.ts         # Reusable validator
+├── shared/            # Shared folder which server and client can access
+│   ├── utils          # Shared utility folder (Auto-Imported)
 ├── stores/            # Pinia state management stores
 │   ├── auth.ts        # Authentication store
 │   ├── index.ts       # Store index file
-│
 ├── .editorconfig      # Editor configuration
 ├── .env               # Environment variables
 ├── .env.example       # Example environment file

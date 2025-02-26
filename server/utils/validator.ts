@@ -1,4 +1,5 @@
 import { Schema } from 'joi';
+import { ResponseHandler } from './response.handler';
 
 export class Validation {
     private schema: Schema;
@@ -17,7 +18,7 @@ export class Validation {
             },
         });
         if (error) {
-            HttpErrors.ParameterError(error);
+            ResponseHandler.ParameterError(error);
         }
 
         return value;

@@ -1,6 +1,7 @@
 
 import joi from "joi";
 import { Validation } from "../utils/validator";
+import { ResponseHandler } from "../utils/response.handler";
 
 interface Request {
     email: string;
@@ -29,7 +30,7 @@ export default defineEventHandler(async (event) => {
         }
     });
     if (user) {
-        HttpErrors.Duplicate('User already exists');
+        ResponseHandler.Duplicate('User already exists');
     }
 
     return await prisma.users.create({
