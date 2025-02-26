@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils'
 import { Cross2Icon } from '@radix-icons/vue'
 import {
   DialogClose,

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ComboboxSeparatorProps } from 'radix-vue'
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils'
 import { ComboboxSeparator } from 'radix-vue'
 import { computed, type HTMLAttributes } from 'vue'
 

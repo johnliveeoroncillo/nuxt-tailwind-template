@@ -13,7 +13,16 @@ export interface PaginationPage {
     max_page: number;
 }
 
+export interface Columns {
+    key: string;
+    label: string;
+    class?: string;
+    sort?: boolean;
+}
+
 export interface Pagination<T> {
     pagination: PaginationPage;
+    sort?: Record<string, 'ASC' | 'DESC'>;
+    columns: Columns[];
     data: T[];
 }

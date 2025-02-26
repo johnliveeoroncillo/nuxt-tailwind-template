@@ -30,6 +30,7 @@ export default defineNuxtConfig({
         SECRET_KEY: process.env.SECRET_KEY,
         SSR: (process.env?.SSR ?? 'true') == 'true',
         SOCKET_URL: process.env?.SOCKET_URL ?? '',
+        PAGE_LIMIT: +(process.env?.PAGE_LIMIT ?? 30),
     },
   },
   compatibilityDate: '2024-11-01',

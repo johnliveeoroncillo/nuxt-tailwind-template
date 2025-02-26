@@ -65,12 +65,12 @@ const data = {
       isActive: true,
       items: [
         {
-          title: 'History',
-          url: '#',
+          title: 'Dashboard',
+          url: 'dashboard',
         },
         {
-          title: 'Starred',
-          url: '#',
+          title: 'Data Table',
+          url: 'data-table',
         },
         {
           title: 'Settings',
