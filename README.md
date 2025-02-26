@@ -10,22 +10,18 @@ This project is a **Nuxt 3** application that includes several key features such
 ├── assets/            # Static assets (CSS, images, etc.)
 │   ├── css/           # Stylesheets
 │   ├── img/           # Image assets
-│
 ├── components/        # Vue components
 │   ├── ui/            # UI-specific components
 │   ├── templates/     # Template components
-│
 ├── composables/                    # Reusable functions and utilities
 │   ├── composables.enums.ts        # Enum definitions
 │   ├── composables.interface.ts    # Interface definitions
 │   ├── useApis.ts                  # API-related composable functions
 │   ├── useAuth.ts                  # Authentication composables
-│
+├── constants/         # Constants and Enums declaration
 ├── interfaces/        # TypeScript interfaces
-│
 ├── layouts/           # Layout components
 │   ├── default.vue    # Default layout
-│
 ├── lib/               # Library and utility functions
 │   ├── prisma.ts      # Prisma client setup
 │   ├── utils.ts       # General utilities
