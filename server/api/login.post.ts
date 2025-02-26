@@ -27,16 +27,16 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     const data = Validate(body);
 
-    const user = await prisma.users.findUnique({
+    const user = await prisma.users.findFirst({
         where: {
-            Email: data.email,
+            email: data.email,
         },
     })
     if (!user) {
         ResponseHandler.NotFound('User not found');
     }
 
-    if (user?.Password !== data.password) {
+    if (user?.password !== data.password) {
         ResponseHandler.BadRequest('Invalid username or password');
     }
 

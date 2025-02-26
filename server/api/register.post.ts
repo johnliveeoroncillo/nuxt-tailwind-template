@@ -24,9 +24,9 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     const data = Validate(body);
     
-    const user = await prisma.users.findUnique({
+    const user = await prisma.users.findFirst({
         where: {
-            Email: data.email,
+            email: data.email,
         }
     });
     if (user) {
@@ -35,10 +35,9 @@ export default defineEventHandler(async (event) => {
 
     return await prisma.users.create({
         data: {
-            Email: data.email,
-            Surname: data.email,
-            Name: data.email,
-            Password: data.password,
+            email: data.email,
+            name: data.email,
+            password: data.password,
         }
     })
 })
