@@ -111,15 +111,6 @@ This project is a **Nuxt 3** boilerplate that includes the ff:
    ```sh
    npm run dev
    ```
-
-## Features
-- **Authentication**: User login, logout, and registration
-- **Role-Based Access Control**: Different portals for suppliers and internal users
-- **Booking System**: Manage booking requests
-- **Trade-Up Requests**: Allow users to submit trade-up requests
-- **Item Receiving & GRN Issuance**: Track and issue GRNs
-- **Admin Dashboard**: Manage users and system configurations
-
 ## Contribution Guidelines
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature-name`)
