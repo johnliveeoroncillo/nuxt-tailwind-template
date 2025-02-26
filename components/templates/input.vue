@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, watch } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps({
     label: {
@@ -51,12 +51,12 @@ const props = defineProps({
 
 // Local state for handling the value
 const internalValue = ref(props.modelValue);
-const errorInput = ref('');
+const errorInput = ref(props.error ?? '');
 
 const emit = defineEmits(['update:modelValue']);
 
 // **Watch internalValue and emit updates only if changed**
-watch(internalValue, (newValue, oldValue) => {
+watch(internalValue, (newValue: any, oldValue: any) => {
     if (newValue !== oldValue) {
         errorInput.value = ''; // Reset error on input
         emit('update:modelValue', newValue);
@@ -64,7 +64,7 @@ watch(internalValue, (newValue, oldValue) => {
 });
 
 // **Watch error prop to keep in sync**
-watch(() => props.error, (newValue) => {
+watch(() => props.error, (newValue: any) => {
     errorInput.value = newValue ?? '';
 });
 </script>

@@ -2,7 +2,6 @@
 import { toast } from 'vue-sonner'
 import type { ObjectLiteral, Response } from './composables.interface';
 import { RequestMethods } from './composables.enums';
-import type { FetchFileResponse } from '~/interfaces/consultation';
 import { useGlobalStore } from '~/stores';
 
 interface ApiResponse<T> {
@@ -14,6 +13,7 @@ interface ApiResponse<T> {
 export const useApi = () => {
     const request = async <T>(url: string, method: RequestMethods, payload?: ObjectLiteral): Promise<ApiResponse<T>> => {
         console.log('Requesting data...', url);
+
         try {
             const env = useRuntimeConfig();
             const { SSR } = env.public;
@@ -55,10 +55,9 @@ export const useApi = () => {
                 }
 
                 const data = error.data;
-        
                 // Handle parameter errors
-                if (data.errors) {
-                    return { apiError: data, paramError: data.errors };
+                if (statusCode === 422 && data.data) {
+                    return { apiError: data, paramError: data.data };
                 }
         
                 // Show toast if an error occurred
@@ -89,7 +88,7 @@ export const useApi = () => {
         return await request<T>(url, RequestMethods.DELETE, payload);
     }
 
-    const FILE = async (url: string): Promise<FetchFileResponse> => {
+    const FILE = async (url: string): Promise<any> => {
         console.log('Requesting file...', url);
 
 
@@ -106,7 +105,7 @@ export const useApi = () => {
                         return contentDisposition ? contentDisposition.split('filename=')[1] : null;
                     };
 
-                    const response = await $fetch<FetchFileResponse>(`/api${url}`, {
+                    const response = await $fetch<any>(`/api${url}`, {
                         method: RequestMethods.GET,
                         responseType: 'blob',
                         headers: {
@@ -124,7 +123,7 @@ export const useApi = () => {
                 } catch (error) {
                     reject({ data: null, error: error });
                 }
-            }) as Promise<FetchFileResponse>;
+            }) as Promise<any>;
 
             const { data, error } = await fetch;
 

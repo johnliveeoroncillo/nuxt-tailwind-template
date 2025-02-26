@@ -39,7 +39,7 @@
                 </span>
               </div>
               <div class="grid gap-6">
-                <templates-input v-model="payload.email" label="Email" />
+                <templates-input v-model="payload.email" label="Email" :error="errors.email" />
                 <div class="grid gap-2">
                   <div class="flex items-center">
                     <a
@@ -49,7 +49,7 @@
                       Forgot your password?
                     </a>
                   </div>
-                  <templates-input v-model="payload.password" label="Password" type="password" />
+                  <templates-input v-model="payload.password" label="Password" type="password" :error="errors.password" />
                 </div>
                 <templates-button-loader type="submit" class="w-full" @click="login">
                   Login
@@ -78,15 +78,20 @@ import { Icon } from '@iconify/vue'
 import { useGlobalStore } from '~/stores';
 const api = useApi();
 
+const errors = ref<Record<string, string>>({});
 const payload = reactive({
     email: '',
     password: '',
 })
 const login = async () => {
-    const { apiData } = await api.POST('/login', payload);
+    errors.value = {}
+    const { apiData, paramError } = await api.POST('/login', payload);
     if (apiData) {
         useAuth().setUser(apiData);
         useRouter().push('/dashboard');
+    }
+    if (paramError) {
+        errors.value = paramError;
     }
 }
 </script>
