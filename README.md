@@ -1,7 +1,15 @@
 # Project Documentation
 
 ## Overview
-This project is a **Nuxt 3** application that includes several key features such as **Trade-Up Requests, Booking System, Item Receiving, GRN Issuance, and Role-Based Portals** for suppliers and internal operations. The system allows administrators to manage users for different roles.
+This project is a **Nuxt 3** boilerplate that includes the ff:
+- Postgre database listener
+- Websockets
+- Auth middlwares
+- Sample APIs
+- Prisma
+- Event Invocations
+- Validators
+- many more ...
 
 ## Folder Structure
 
