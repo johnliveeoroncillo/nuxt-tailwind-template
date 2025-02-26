@@ -7,7 +7,7 @@
             Welcome back
           </CardTitle>
           <CardDescription>
-            Login with your Apple or Google account
+            Login with your Apple or Google account {{ useGlobalStore().socketId }}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -75,8 +75,7 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
-// import { socket } from './socket';
-
+import { useGlobalStore } from '~/stores';
 const api = useApi();
 
 const payload = reactive({
@@ -90,9 +89,4 @@ const login = async () => {
         useRouter().push('/dashboard');
     }
 }
-
-// watch(colorMode, (newVal: any) => {
-//     console.log('test')
-//     socket.emit('message', newVal)
-// }, { deep: true });
 </script>

@@ -25,10 +25,6 @@ export default defineEventHandler(async (event) => {
 
     const body = await readBody(event)
     const data = Validate(body);
-
-    event.node.req.socket.server?.nitroApp?.hooks.callHook(
-        "custom:send-message",
-        data.socketId,
-        data.message,
-    );
+   
+    useNitroApp().hooks.callHook('custom:send-message', data.socketId, data.message);
 })

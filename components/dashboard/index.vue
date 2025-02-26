@@ -10,7 +10,7 @@
             <BreadcrumbList>
               <BreadcrumbItem class="hidden md:block">
                 <BreadcrumbLink href="#">
-                  Building Your Application
+                  Building Your Application {{ useGlobalStore().socketId }}
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator class="hidden md:block" />
@@ -33,9 +33,6 @@
   </SidebarProvider>
 </template>
 
-<script lang="ts">
-export const description
-  = 'A sidebar that collapses to icons.'
-export const iframeHeight = '800px'
-export const containerClass = 'w-full h-full'
+<script setup lang="ts">
+import { useGlobalStore } from '~/stores';
 </script>

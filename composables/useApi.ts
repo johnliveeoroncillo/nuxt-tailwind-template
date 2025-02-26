@@ -3,6 +3,7 @@ import { toast } from 'vue-sonner'
 import type { ObjectLiteral, Response } from './composables.interface';
 import { RequestMethods } from './composables.enums';
 import type { FetchFileResponse } from '~/interfaces/consultation';
+import { useGlobalStore } from '~/stores';
 
 interface ApiResponse<T> {
     apiData?: Response<T> | null;
@@ -21,6 +22,9 @@ export const useApi = () => {
             const config: any = {
                 method,
                 withCredentials: true,
+                headers: {
+                    'x-socket-id': useGlobalStore().socketId,
+                }
             }
 
             if (!SSR) {
@@ -105,6 +109,9 @@ export const useApi = () => {
                     const response = await $fetch<FetchFileResponse>(`/api${url}`, {
                         method: RequestMethods.GET,
                         responseType: 'blob',
+                        headers: {
+                            'x-socket-id': useGlobalStore().socketId,
+                        },
                         onResponse: ({ response }: any) => {
                             console.log('Response...', response);
                             const fileType = getFileTypeFromHeaders(response.headers);

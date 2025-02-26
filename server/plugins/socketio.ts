@@ -40,13 +40,14 @@ export default defineNitroPlugin((nitroApp: AppConfig) => {
     }
   }));
 
-  // nitroApp.hooks.hook("custom:send-message", (socketId: string, message: string) => {
-  //     const socket = connectedSockets.get(socketId);
-  //     if (socket) {
-  //         socket.emit("message", message);
-  //     }
-  // });
+  nitroApp.hooks.hook("custom:send-message", (socketId: string, message: string) => {
+      console.log('custom hook received', socketId, message)
+      const socket = connectedSockets.get(socketId);
+      if (socket) {
+          socket.emit("message", message);
+      }
+  });
 
-  // // Attach io to Nitro app for external access
-  // nitroApp.io = io;
+  // Attach io to Nitro app for external access
+  nitroApp.io = io;
 });
