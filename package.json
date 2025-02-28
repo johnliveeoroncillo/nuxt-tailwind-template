@@ -24,6 +24,7 @@
     "prisma:deploy": "npx prisma migrate deploy",
     "prisma:generate": "npx prisma generate",
     "prisma:studio": "npx prisma studio",
+    "prisma:pull": "npx prisma db pull",
     "make:api": "ts-node artisan.js make:api",
     "lint": "eslint . --ext .ts,.vue --fix",
     "copy-email": "cp -r server/email .output/server"

@@ -85,7 +85,7 @@ const payload = reactive({
 })
 const login = async () => {
     errors.value = {}
-    const { apiData, paramError } = await api.POST('/login', payload);
+    const { apiData, paramError } = await api.POST('/create-user', payload);
     if (apiData) {
         useAuth().setUser(apiData);
         useRouter().push('/dashboard');
