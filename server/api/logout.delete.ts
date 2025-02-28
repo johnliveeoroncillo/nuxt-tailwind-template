@@ -1,3 +1,3 @@
 export default defineEventHandler(async (event) => {
-    clearCookie('token');
+    clearCookie(process.env?.TOKEN_NAME ?? 'token');
 })
