@@ -2,6 +2,7 @@
 
 ## Overview
 This project is a **Nuxt 3** boilerplate that includes the ff:
+- Client & Server (All-in-one)
 - Postgre database listener
 - Websockets
 - Auth middlwares
@@ -9,7 +10,8 @@ This project is a **Nuxt 3** boilerplate that includes the ff:
 - Prisma
 - Event Invocations
 - Validators
-- many more ...
+- Email Templating
+- many more features coming soon...
 
 ## Folder Structure
 
@@ -32,7 +34,6 @@ This project is a **Nuxt 3** boilerplate that includes the ff:
 │   ├── default.vue    # Default layout
 ├── lib/               # Library and utility functions
 │   ├── prisma.ts      # Prisma client setup
-│   ├── utils.ts       # General utilities
 ├── middleware/        # Nuxt middleware (Executed alphabetically)
 │   ├── auth.global.ts # Global authentication middleware
 ├── pages/             # Nuxt pages
@@ -44,33 +45,33 @@ This project is a **Nuxt 3** boilerplate that includes the ff:
 ├── prisma/            # Database schema and migrations
 │   ├── migrations/    # Prisma migration files
 │   ├── schema.prisma  # Prisma schema definition
-│
 ├── public/            # Public assets (icons, static files)
 │   ├── icons/         # Icon assets
 │   ├── favicon.ico    # Favicon
 │   ├── robots.txt     # Robots.txt file
 ├── server/            # Server-side API routes and middleware
 │   ├── api/           # API endpoints
-│   │   ├── update-profile.ts    # Update user profile
-│   │   ├── login.post.ts        # Login API
-│   │   ├── logout.delete.ts     # Logout API
-│   │   ├── register.post.ts     # User registration API
+│   ├── email/         # Email templates (e.g. welcome.ejs)
 │   ├── middleware/              # Server middleware
 │   │   ├── authorizer.global.ts # Authorization middleware
 │   │   ├── request.global.ts    # Request handling middleware
 │   ├── plugins/                 # Server-side plugins
 │   │   ├── hooks.ts.bak         # Hook plugin (backup)
 │   │   ├── socket.io.ts         # WebSocket integration
-│   ├── utils/                   # Server utilities
+│   ├── events/                  # List of event functions
+│   ├── utils/                   # Server utilities (BE)
 │   │   ├── prisma.ts            # Prisma configuration
 │   │   ├── protected-routes.ts  # Protected routes config
 │   │   ├── response.handler.ts  # Response handler class
 │   │   ├── validator.ts         # Reusable validator
 ├── shared/            # Shared folder which server and client can access
 │   ├── utils          # Shared utility folder (Auto-Imported)
+├── types/             # Custom extend data types
 ├── stores/            # Pinia state management stores
 │   ├── auth.ts        # Authentication store
 │   ├── index.ts       # Store index file
+├── utils/             # Front-end utilities
+│   ├── index.ts       # General utilities
 ├── .editorconfig      # Editor configuration
 ├── .env               # Environment variables
 ├── .env.example       # Example environment file
@@ -104,13 +105,43 @@ This project is a **Nuxt 3** boilerplate that includes the ff:
 
 4. Run database migrations:
    ```sh
-   npx prisma migrate dev
+   npm run prisma:deploy
    ```
 
 5. Start the development server:
    ```sh
    npm run dev
    ```
+
+## Production
+```sh
+npm run build
+npm run start
+```
+
+## Environment
+```sh
+APP_NAME=
+SECRET_KEY=
+SSR=
+
+
+# Database
+DATABASE_URL=mysql://username:password!@localhost:3306/databaseName?connection_limit=5
+# Optional: For Postgre SQL
+PULSE_API_KEY=
+
+# Page Limit
+PAGE_LIMIT=50
+
+# Email Config
+SMTP_HOST=
+SMTP_USERNAME=
+SMTP_PASSWORD=
+SMTP_PORT=
+SMTP_FROM=
+```
+
 ## Contribution Guidelines
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature-name`)
@@ -120,4 +151,5 @@ This project is a **Nuxt 3** boilerplate that includes the ff:
 
 ---
 **ISIP - Innovative Solutions Infinite Possibilities**
+Created By: <a href="https://github.com/johnliveeoroncillo">JL</a>
 
