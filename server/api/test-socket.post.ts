@@ -4,14 +4,12 @@ import { Validation } from "@/server/utils/validator";
 
 interface Request {
     message: string;
-    socketId: string;
 }
 
 const Validate = (request: Request): Request => {
     const schema = joi
         .object({
             message: joi.string().required(),
-            socketId: joi.string().required(),
         })
         .required();
 
@@ -26,5 +24,6 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     const data = Validate(body);
    
-    useNitroApp().hooks.callHook('custom:send-message', data.socketId, data.message);
+    const socketId = getHeader(event, 'x-socket-id');
+    useNitroApp().hooks.callHook('custom:send-message', socketId ?? '', data.message);
 })

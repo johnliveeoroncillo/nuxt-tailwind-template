@@ -35,5 +35,5 @@ export default defineEventHandler(async (event) => {
     // Remove a key with
     await useStorage('redis').removeItem('foo')
 
-    return ResponseHandler.Ok(data);
+    return ResponseHandler.Ok({ data });
 })

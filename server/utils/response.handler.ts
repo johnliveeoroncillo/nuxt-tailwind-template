@@ -1,10 +1,13 @@
 
 export class ResponseHandler {
-    static Ok(data?: any, message?: string) {
+    static Ok(options: {
+        data?: any,
+        message?: string,
+    } | 'string') {
         return {
             status: 200,
-            message: message ?? 'OK',
-            data,
+            message: (typeof options === 'string' ? options : options?.message) ?? 'OK',
+            data: typeof options === 'object' ? options?.data : null,
         };
     }
 

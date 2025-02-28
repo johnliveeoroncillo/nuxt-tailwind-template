@@ -1,5 +1,3 @@
-import { readFileSync } from "fs";
-
 /**
  * List down all protected endpoints
  */

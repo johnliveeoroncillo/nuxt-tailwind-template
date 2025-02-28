@@ -26,7 +26,7 @@ pgClient.on('notification', (msg: any) => {
   console.log('pgClient notification', msg);
   try {
     const payload = JSON.parse(msg.payload ?? '{}');
-    const { table, operation, data } = payload;
+    const { table, } = payload;
     console.log(`🔔 Change detected in table ${table}:`, payload);
     // Broadcast using WebSockets or another mechanism if needed
   } catch (err) {

@@ -33,5 +33,5 @@ export default defineEventHandler(async (event) => {
         data,
     }))
 
-    return ResponseHandler.Ok(data);
+    return ResponseHandler.Ok({ data });
 })
