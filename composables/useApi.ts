@@ -123,7 +123,7 @@ export const useApi = () => {
                 } catch (error) {
                     reject({ data: null, error: error });
                 }
-            }) as Promise<any>;
+            });
 
             const { data, error } = await fetch;
 

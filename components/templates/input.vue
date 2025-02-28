@@ -3,9 +3,9 @@
         <Label v-if="props.label" :for="id" class="mb-2 block">{{ props.label }}</Label>
         <Input
             :id="id"
+            v-model="internalValue"
             :type="type"
             required
-            v-model="internalValue"
             class="w-full block"
             :class="{
                 [props.class]: 1,
@@ -13,7 +13,7 @@
             }"
             :disabled="props.disabled"
         />
-        <small class="text-red-600 font-medium text-xs" v-if="errorInput">{{ errorInput }}</small>
+        <small v-if="errorInput" class="text-red-600 font-medium text-xs">{{ errorInput }}</small>
     </div>
 </template>
 

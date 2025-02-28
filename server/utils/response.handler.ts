@@ -3,7 +3,7 @@ export class ResponseHandler {
     static Ok(data?: any, message?: string) {
         return {
             status: 200,
-            message: message ?? 'Ok',
+            message: message ?? 'OK',
             data,
         };
     }

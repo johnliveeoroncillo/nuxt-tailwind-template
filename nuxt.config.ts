@@ -69,17 +69,21 @@ export default defineNuxtConfig({
       //   }
       // }
   },
-  // vite: {
-  //   server: {
-  //     proxy: {
-  //       '/api': { // This is the prefix you'll use in your fetch calls
-  //         target: process.env.API_URL, // Your local API server
-  //         changeOrigin: true, // Required for localhost
-  //         rewrite: (path: string) => path.replace(/^\/api/, ''), // Remove the /api prefix when forwarding the request
-  //       },
-  //     },
-  //   },
-  // },
+  vite: {
+    server: {
+        watch: {
+            // During tests we edit the files that are copied, so we need to ignore the .output dir.
+            ignored: ["**/.output/**"],
+        },
+    //   proxy: {
+    //     '/api': { // This is the prefix you'll use in your fetch calls
+    //       target: process.env.API_URL, // Your local API server
+    //       changeOrigin: true, // Required for localhost
+    //       rewrite: (path: string) => path.replace(/^\/api/, ''), // Remove the /api prefix when forwarding the request
+    //     },
+    //   },
+    },
+  },
   // pwa: {
   //   registerType: 'autoUpdate', // or 'prompt'
   //   injectRegister: 'auto',

@@ -20,7 +20,7 @@
             </Table>
         </ScrollArea>
         <div>
-            <Pagination v-slot="{ page }" :items-per-page="props.data.pagination?.limit ?? pageLimit" :total="props.data.pagination.total_rows" :sibling-count="1" show-edges :default-page="1" v-model:page="props.data.pagination.page">
+            <Pagination v-slot="{ page }" v-model:page="props.data.pagination.page" :items-per-page="props.data.pagination?.limit ?? pageLimit" :total="props.data.pagination.total_rows" :sibling-count="1" show-edges :default-page="1">
                 <PaginationList v-slot="{ items }" class="flex items-center gap-1">
                 <PaginationFirst />
                 <PaginationPrev />
