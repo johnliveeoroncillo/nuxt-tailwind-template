@@ -1,3 +1,5 @@
 export default defineEventHandler(async (event) => {
-    clearCookie(process.env?.TOKEN_NAME ?? 'token');
+    deleteCookie(event, process.env?.TOKEN_NAME ?? 'token');
+
+    return ResponseHandler.Ok();
 })

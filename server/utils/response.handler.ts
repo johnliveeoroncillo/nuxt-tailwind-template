@@ -3,7 +3,7 @@ export class ResponseHandler {
     static Ok(options: {
         data?: any,
         message?: string,
-    } | 'string') {
+    } | 'string' = {}) {
         return {
             status: 200,
             message: (typeof options === 'string' ? options : options?.message) ?? 'OK',
